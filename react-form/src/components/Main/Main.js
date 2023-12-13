@@ -1,22 +1,28 @@
 import React from "react";
-import './Main.css'
-import avatar from '../../assets/images/avatar.png'
+import './Main.css';
+import avatar from '../../assets/images/avatar.png';
 import { useForm } from "react-hook-form";
-import * as yup from 'yup'
-import {yupResolver} from '@hookform/resolvers/yup'
-import folder from '../../assets/images/folder.png'
+import * as yup from 'yup';
+import {yupResolver} from '@hookform/resolvers/yup';
+import folder from '../../assets/images/folder.png';
+import {useNavigate} from 'react-router-dom';
+import { useData } from "../../DataContext";
 
 const schema = yup.object().shape({
-    phone: yup.string().required().matches(/[+7][0-9]{10}$/, 'Неверный номер телефона'),
-    email: yup.string().required().email()
+    phone: yup.string().required('Обязательное поле').matches(/[+7][0-9]{10}$/, 'Неверный номер телефона'),
+    email: yup.string().required('Обязательное поле').email('Неверный адрес почты')
 })
 const Main = () => {
+    const { setValues, data: globalData } = useData();
+    const navigate = useNavigate()
     const { register, handleSubmit, formState:{errors} } = useForm({
         mode: "onBlur",
-        resolver: yupResolver(schema)
+        resolver: yupResolver(schema),
+        defaultValues: { phone: globalData.phone, email: globalData.email}
     })
     const onSubmit = (data) => {
-        console.log(data)
+        setValues(data)
+        navigate('/step1')
     }
     return (
         <div className="background">
@@ -45,7 +51,7 @@ const Main = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="main-form">
                 <div className="main-input">
                     <label>Номер телефона</label>
-                    <input type="number" name="phone" 
+                    <input type="text" name="phone" value={"+79999999999"}
                     placeholder="+7 999 999-99-99" {...register("phone")}/>
                     <p>{errors.phone?.message}</p>
                 </div>
@@ -60,4 +66,4 @@ const Main = () => {
         </div>
     )
 }
-export default Main
+export default Main;

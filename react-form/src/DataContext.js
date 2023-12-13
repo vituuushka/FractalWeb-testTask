@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
 const DataContext = createContext()
+
 export const DataProvider = ({children}) => {
     const [data,setData] = useState({})
     const setValues = (values) => {
@@ -15,4 +16,4 @@ export const DataProvider = ({children}) => {
     )
     }
 
-export const useData = () => {useContext(DataContext)}
+export const useData = () => useContext(DataContext)
