@@ -51,7 +51,7 @@ const Main = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="main-form">
                 <div className="main-input">
                     <label>Номер телефона</label>
-                    <input type="text" name="phone" value={"+79999999999"}
+                    <input type="text" name="phone"
                     placeholder="+7 999 999-99-99" {...register("phone")}/>
                     <p>{errors.phone?.message}</p>
                 </div>
