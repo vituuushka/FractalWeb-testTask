@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const successResult = { ok: false, error: undefined };
+const successResult = { ok: true, error: undefined };
 const errorResult = { ok: false, error: "some error" };
 
 export const sendFormMock = (data) => {
