@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/FractalWeb-testTask/static/css/main.6a02df9d.css",
+    "main.js": "/FractalWeb-testTask/static/js/main.7d0d213d.js",
+    "static/js/787.165a1dec.chunk.js": "/FractalWeb-testTask/static/js/787.165a1dec.chunk.js",
+    "static/media/TTTravels-Bold.eot": "/FractalWeb-testTask/static/media/TTTravels-Bold.8bae79980f4a189c9211.eot",
+    "static/media/TTTravels-Bold.ttf": "/FractalWeb-testTask/static/media/TTTravels-Bold.6532f91538cf2d2167ae.ttf",
+    "static/media/TTTravels-Medium.eot": "/FractalWeb-testTask/static/media/TTTravels-Medium.8c3962c43d940b881e0b.eot",
+    "static/media/TTTravels-Medium.ttf": "/FractalWeb-testTask/static/media/TTTravels-Medium.3ed3b930aabe28ad2a03.ttf",
+    "static/media/TTTravels-Medium.woff": "/FractalWeb-testTask/static/media/TTTravels-Medium.28cf6f41b5a4af5f4043.woff",
+    "static/media/TTTravels-Bold.woff": "/FractalWeb-testTask/static/media/TTTravels-Bold.a82c7e57e34e2e1dd398.woff",
+    "index.html": "/FractalWeb-testTask/index.html",
+    "main.6a02df9d.css.map": "/FractalWeb-testTask/static/css/main.6a02df9d.css.map",
+    "main.7d0d213d.js.map": "/FractalWeb-testTask/static/js/main.7d0d213d.js.map",
+    "787.165a1dec.chunk.js.map": "/FractalWeb-testTask/static/js/787.165a1dec.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a02df9d.css",
+    "static/js/main.7d0d213d.js"
+  ]
+}
