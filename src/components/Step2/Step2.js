@@ -97,7 +97,7 @@ const Step2 = () => {
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="step-form">
         <div className="step-input">
-          <label className="adv-label">Преимущества</label>
+          <span className="adv-label">Преимущества</span>
           <Advantages
             advantages={advantages}
             addAdvantage={addAdvantage}

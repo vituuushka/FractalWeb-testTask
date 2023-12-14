@@ -14,3 +14,13 @@
   align-items: flex-start;
   gap: 8px;
 }
+
+.step-input span {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
