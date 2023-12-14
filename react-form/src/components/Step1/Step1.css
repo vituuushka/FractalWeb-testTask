@@ -1,71 +1,70 @@
 .background-step1 {
-    padding: 62px 110px 0px 110px;
-    width: 900px;
-    height: 821px;
-    
+  padding: 62px 110px 0px 110px;
+  width: 900px;
+  height: 821px;
 }
 .stepper {
-    text-align: center;
+  text-align: center;
 }
 .step-form {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 67px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 67px;
 }
 .step-input label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 }
 .step-input input,
 .step-input select {
-    width: 300px;
-    height: 44px;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.16);
-    background-color: #FFF;
-    padding: 12px;
-    box-sizing: border-box;
+  width: 300px;
+  height: 44px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  background-color: #fff;
+  padding: 12px;
+  box-sizing: border-box;
 }
 .step-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0;   
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
 }
 .button {
-    width: 79px;
-    height: 44px;
+  width: 79px;
+  height: 44px;
 }
 .button-back {
-    outline: none;
-    border: none;
-    display: inline-flex;
-    padding: 12px 16px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 4px;
-    border: 1.5px solid #5558FA;
-    color: #5558FA;
+  outline: none;
+  border: none;
+  display: inline-flex;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  border: 1.5px solid #5558fa;
+  color: #5558fa;
 }
 .button-next {
-    outline: none;
-    border: none;
-    display: inline-flex;
-    padding: 12px 16px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 4px;
-    background: #5558FA;
-    color: #fff;
+  outline: none;
+  border: none;
+  display: inline-flex;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  background: #5558fa;
+  color: #fff;
 }
 .step-input p {
-    color: red;
-    margin-top: 10px;
+  color: red;
+  margin-top: 10px;
 }

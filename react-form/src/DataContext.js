@@ -1,19 +1,24 @@
 import { createContext, useContext, useState } from "react";
 
-const DataContext = createContext()
+const DataContext = createContext();
 
-export const DataProvider = ({children}) => {
-    const [data,setData] = useState({})
-    const setValues = (values) => {
-        setData((prevData) => ({
-            ...prevData,
-            ...values
-        })
-        )
+export const DataProvider = ({ children }) => {
+  const [data, setData] = useState({});
+  const setValues = (values) => {
+    if (values == null) {
+      setData({})
+    } else {
+      setData((prevData) => ({
+        ...prevData,
+        ...values,
+      }));
     }
-    return (
-        <DataContext.Provider value={{data, setValues}} >{children}</DataContext.Provider>
-    )
-    }
+  };
+  return (
+    <DataContext.Provider value={{ data, setValues }}>
+      {children}
+    </DataContext.Provider>
+  );
+};
 
-export const useData = () => useContext(DataContext)
+export const useData = () => useContext(DataContext);

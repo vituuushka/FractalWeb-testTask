@@ -4,7 +4,7 @@ import close from '../../assets/images/Close.png'
 import error from '../../assets/images/error-modal.png'
 import success from '../../assets/images/success-modal.png'
 
-const Modal = ({ok}) => {
+const Modal = ({ok, closeModal, goMain}) => {
     return (
         <div className='modal-content'>
         <div className='result'>
@@ -17,21 +17,21 @@ const Modal = ({ok}) => {
                 <img src={success} />
             </div>
             <div className="success-modal-footer">
-                <button className="success-modal-button" >На главную</button>
+                <button type="button" onClick={goMain} className="success-modal-button" >На главную</button>
             </div>
             </div>
             : <div className="error-modal" >
                 <div className="error-modal-header">
                     <div className="error-header-text">Ошибка</div>
                     <div className="error-header-button" >
-                    <button className="error-header-btn"><img src={close} /></button>
+                    <button type="button" onClick={closeModal} className="error-header-btn"><img src={close} /></button>
                     </div>
                 </div>
                 <div className="error-modal-container">
                     <img src={error} />
                 </div>
                 <div className="error-modal-footer">
-                    <button className="error-modal-button" >Закрыть</button>
+                    <button type="button" onClick={closeModal} className="error-modal-button" >Закрыть</button>
                 </div>
                 </div>}
         </div>

@@ -1,32 +1,44 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useRef } from "react";
-import advDelete from '../../../assets/images/delete-adv.png'
-import s from './Advantage.module.css'
+import advDelete from "../../../assets/images/delete-adv.png";
+import s from "./Advantage.module.css";
 
+const Advantage = ({
+  name,
+  removeAdvantage,
+  id,
+  onTextChange,
+  advantage,
+  errors,
+  register,
+}) => {
+  // const advValue = useRef();
+  const onChange = (e) => {
+    onTextChange(id, e.target.value);
+  };
+  const deleteAdv = () => {
+    removeAdvantage(id);
+  };
 
-const Advantage = ({name,removeAdvantage,id,onTextChange,advantage, errors,register}) => {
-    const advValue = useRef()
-    const onChange = (e)=> {
-        onTextChange(id,e.target.value)
-    }
-    const deleteAdv = () => {
-        removeAdvantage(id)
-    }
-    
-    return (
-        <div className={s.advantage}>
-            <div className={s.input}>
-            <input type="text" name={name}
-             placeholder="Placeholder"
-             ref={advValue}
-             value={advantage}
-             {...register(name)}
-             onChange={onChange}/>
-            <button className={s.button} type="button" onClick={deleteAdv}><img src={advDelete} /></button>
-            </div>
-            <p>{errors[name]?.message}</p>
-        </div>
-    )
-}
+  return (
+    <div className={s.advantage}>
+      <div className={s.input}>
+        <input
+          type="text"
+          name={name}
+          placeholder="Placeholder"
+          // ref={advValue}
+          value={advantage}
+          {...register(name)}
+          onChange={onChange}
+        />
+        <button className={s.button} type="button" onClick={deleteAdv}>
+          <img src={advDelete} />
+        </button>
+      </div>
+      <p>{errors[name]?.message}</p>
+    </div>
+  );
+};
 export default Advantage;

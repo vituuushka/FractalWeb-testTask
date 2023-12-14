@@ -1,21 +1,21 @@
-
 @font-face {
-  font-family: 'TT Travels';
-  src: url('./assets/fonts/TTTravels-Medium.eot');
-  src: local('./assets/fonts/TT Travels Medium'), local('TTTravels-Medium'),
-      url('./assets/fonts/TTTravels-Medium.eot?#iefix') format('embedded-opentype'),
-      url('./assets/fonts/TTTravels-Medium.woff') format('woff'),
-      url('./assets/fonts/TTTravels-Medium.ttf') format('truetype');
+  font-family: "TT Travels";
+  src: url("./assets/fonts/TTTravels-Medium.eot");
+  src: local("./assets/fonts/TT Travels Medium"), local("TTTravels-Medium"),
+    url("./assets/fonts/TTTravels-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/TTTravels-Medium.woff") format("woff"),
+    url("./assets/fonts/TTTravels-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: 'TT Travels';
-  src: url('./assets/fonts/TTTravels-Bold.eot');
-  src: local('./assets/fonts/TT Travels Bold'), local('TTTravels-Bold'),
-      url('./assets/fonts/TTTravels-Bold.eot?#iefix') format('embedded-opentype'),
-      url('./assets/fonts/TTTravels-Bold.woff') format('woff'),
-      url('./assets/fonts/TTTravels-Bold.ttf') format('truetype');
+  font-family: "TT Travels";
+  src: url("./assets/fonts/TTTravels-Bold.eot");
+  src: local("./assets/fonts/TT Travels Bold"), local("TTTravels-Bold"),
+    url("./assets/fonts/TTTravels-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/TTTravels-Bold.woff") format("woff"),
+    url("./assets/fonts/TTTravels-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
@@ -28,10 +28,8 @@
 .app {
   width: 100%;
   height: 100vh;
-  background-color: #F4F4F5;
+  background-color: #f4f4f5;
   display: flex;
   justify-content: center;
   padding-top: 24px;
 }
-
-
