@@ -9,7 +9,16 @@
   font-weight: 500;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'TT Travels';
+  src: url('./assets/fonts/TTTravels-Bold.eot');
+  src: local('./assets/fonts/TT Travels Bold'), local('TTTravels-Bold'),
+      url('./assets/fonts/TTTravels-Bold.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/TTTravels-Bold.woff') format('woff'),
+      url('./assets/fonts/TTTravels-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 * {
   margin: 0;

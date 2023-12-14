@@ -1,13 +1,39 @@
 import React from "react";
-// import s from './Modal.module.css'
-import './Modal.css'
+import './Modal.css';
+import close from '../../assets/images/Close.png'
+import error from '../../assets/images/error-modal.png'
+import success from '../../assets/images/success-modal.png'
 
 const Modal = ({ok}) => {
     return (
         <div className='modal-content'>
         <div className='result'>
-            {ok ? <p>zaebis'</p>
-            :<p>ne zaebis</p>}
+            {ok ? 
+            <div className="success-modal" >
+            <div className="success-modal-header">
+                <div className="success-header-text">Форма успешно отправлена</div>
+            </div>
+            <div className="success-modal-container">
+                <img src={success} />
+            </div>
+            <div className="success-modal-footer">
+                <button className="success-modal-button" >На главную</button>
+            </div>
+            </div>
+            : <div className="error-modal" >
+                <div className="error-modal-header">
+                    <div className="error-header-text">Ошибка</div>
+                    <div className="error-header-button" >
+                    <button className="error-header-btn"><img src={close} /></button>
+                    </div>
+                </div>
+                <div className="error-modal-container">
+                    <img src={error} />
+                </div>
+                <div className="error-modal-footer">
+                    <button className="error-modal-button" >Закрыть</button>
+                </div>
+                </div>}
         </div>
         </div>
     )
