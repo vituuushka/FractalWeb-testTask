@@ -2,7 +2,7 @@
     padding: 62px 110px 0px 110px;
     width: 900px;
     height: 821px;
-    box-sizing: border-box;
+    
 }
 .stepper {
     text-align: center;
@@ -15,8 +15,15 @@
 }
 .step-input label {
     display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
 }
-.step-input input {
+.step-input input,
+.step-input select {
     width: 300px;
     height: 44px;
     border-radius: 4px;
@@ -57,4 +64,8 @@
     border-radius: 4px;
     background: #5558FA;
     color: #fff;
+}
+.step-input p {
+    color: red;
+    margin-top: 10px;
 }

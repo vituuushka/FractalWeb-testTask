@@ -1,11 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useRef } from "react";
+import advDelete from '../../../assets/images/delete-adv.png'
+import s from './Advantage.module.css'
 
 
-
-const Advantage = ({name,removeAdvantage,id,onTextChange,advantage}) => {
-    const { register, handleSubmit, formState:{errors} } = useForm()
+const Advantage = ({name,removeAdvantage,id,onTextChange,advantage, errors,register}) => {
     const advValue = useRef()
     const onChange = (e)=> {
         onTextChange(id,e.target.value)
@@ -15,16 +15,15 @@ const Advantage = ({name,removeAdvantage,id,onTextChange,advantage}) => {
     }
     
     return (
-        <div>
+        <div className={s.input}>
             <input type="text" name={name}
              placeholder="Placeholder"
              ref={advValue}
              value={advantage}
              {...register(name)}
-
-             onChange={onChange}
-             ></input>
-            <button type="button"  onClick={deleteAdv} >delete</button>
+             onChange={onChange}/>
+             <p>{errors[name]?.message}</p>
+            <button className={s.button} type="button" onClick={deleteAdv}><img src={advDelete} /></button>
         </div>
     )
 }

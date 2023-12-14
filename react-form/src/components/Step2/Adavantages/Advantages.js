@@ -1,5 +1,7 @@
 import React from "react";
 import Advantage from "./Advantage";
+import s from './Advantages.module.css'
+import addButton from '../../../assets/images/add-adv-button.png'
 
 const Advantages = (props) => {
     return (
@@ -11,9 +13,13 @@ const Advantages = (props) => {
                     id={index}
                     removeAdvantage={props.removeAdvantage}
                     onTextChange={props.onTextChange}
-                    advantage={adv}/>
+                    advantage={adv}
+                    errors={props.errors}
+                    register={props.register}/>
                 )}
-                <button type="button" onClick={props.addAdvantage} >+</button>
+                <button className={s.button} type="button" onClick={props.addAdvantage} >
+                    <img src={addButton} />
+                </button>
         </div>
     )
 }
