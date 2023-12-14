@@ -15,15 +15,17 @@ const Advantage = ({name,removeAdvantage,id,onTextChange,advantage, errors,regis
     }
     
     return (
-        <div className={s.input}>
+        <div className={s.advantage}>
+            <div className={s.input}>
             <input type="text" name={name}
              placeholder="Placeholder"
              ref={advValue}
              value={advantage}
              {...register(name)}
              onChange={onChange}/>
-             <p>{errors[name]?.message}</p>
             <button className={s.button} type="button" onClick={deleteAdv}><img src={advDelete} /></button>
+            </div>
+            <p>{errors[name]?.message}</p>
         </div>
     )
 }
