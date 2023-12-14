@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import { useData } from "../../DataContext";
 import {useNavigate} from 'react-router-dom';
 import { useForm } from "react-hook-form";
@@ -6,6 +6,8 @@ import stepper3 from '../../assets/images/stepper3.png';
 import './Step3.css';
 import * as yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
+import { sendFormMock } from "../../api/sendForm";
+import Modal from "../Modal/Modal";
 
 const schema = yup.object().shape({
     about: yup.string().required('Обязательное поле').max(30, 'Максимальное число символов: 200')
@@ -18,14 +20,21 @@ const Step3 = () => {
         resolver: yupResolver(schema),
         defaultValues: { about: globalData.about}
     })
-    const onSubmit = (data) => {
-        setValues(data)
-        navigate('/')
+
+    const[isSent,setIsSent] = useState(false)
+    const[result,setResult] = useState()
+    const onSubmit = async(data) => {
+        setIsSent(true)
+        const res = await sendFormMock(data)
+        setResult(res)
     }
 
     const goBack = () => {
         navigate('/step2')
     }
+
+
+
 
     return(
         <div className="background background-step3">
@@ -41,10 +50,18 @@ const Step3 = () => {
                 </div>
             <div className='step-buttons'>
                 <button onClick={goBack} type="button" className='button button-back'>Назад</button>
-                <button type='submit' className='button button-next'>Далее</button>
+                <button type='submit' className='button button-next'>Отправить</button>
                 </div>
             </form>
+            {isSent && <div className="modal">
+                <div className="hidden"></div>
+                
+                {result && <Modal ok={result.ok} />}
+             
+                
+                </div>}
         </div>
+        
     )
 }
 export default Step3;
