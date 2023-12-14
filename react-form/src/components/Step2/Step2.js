@@ -53,10 +53,7 @@ const Step2 = () => {
     defaultValues,
   });
 
-  const onSubmit = (data) => {
-    setValues({ ...data, advantages });
-    navigate("/step3");
-  };
+  
 
   const goBack = () => {
     setValues({ advantages, radio, checkbox });
@@ -86,6 +83,11 @@ const Step2 = () => {
     setCheckbox({ ...checkbox, [checkboxNumber]: !checkbox[checkboxNumber] });
   };
 
+
+  const onSubmit = (data) => {
+    setValues({ ...data, advantages, checkbox });
+    navigate("/step3");
+  };
  
 
   return (

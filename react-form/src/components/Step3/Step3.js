@@ -34,12 +34,12 @@ const Step3 = () => {
 
   const [isSent, setIsSent] = useState(false);
   const [result, setResult] = useState();
-  const [about, setAbout] = useState();
+  const [about, setAbout] = useState(globalData.about );
 
   const onSubmit = async (data) => {
     setValues({ ...data, about})
     setIsSent(true);
-    const res = await sendFormMock(data);
+    const res = await sendFormMock({ ...globalData, about});
     setResult(res);
   };
 
