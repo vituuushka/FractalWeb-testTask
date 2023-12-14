@@ -46,8 +46,8 @@ const Step1 = () => {
       sex: globalData.sex,
     },
   });
+
   const onSubmit = (data) => {
-    debugger
     setValues(data);
     navigate("/step2");
   };

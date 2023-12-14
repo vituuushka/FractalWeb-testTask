@@ -8,17 +8,21 @@ import { useNavigate } from "react-router-dom";
 import { useData } from "../../DataContext";
 import Advantages from "./Adavantages/Advantages";
 
+const radioValue1 = '1'
+const radioValue2 = '2'
+const radioValue3= '3'
+const [checkboxText1, checkboxText2, checkboxText3] = ['1', '2', '3']
+
 const generateAdvantageName = (i) => `advantage-${i + 1}`;
 
 const Step2 = () => {
   const { setValues, data: globalData } = useData();
   const navigate = useNavigate();
 
-  debugger
   const defaultValues = {
-    checkbox1: globalData.checkbox1,
-    checkbox2: globalData.checkbox2,
-    checkbox3: globalData.checkbox3,
+    checkbox1: globalData.checkbox?.[checkboxText1],
+    checkbox2: globalData.checkbox?.[checkboxText2],
+    checkbox3: globalData.checkbox?.[checkboxText3],
     radio: globalData.radio,
   };
 
@@ -38,6 +42,8 @@ const Step2 = () => {
   }
   const schema = yup.object().shape(shape);
 
+  
+
   const {
     register,
     handleSubmit,
@@ -52,15 +58,9 @@ const Step2 = () => {
     navigate("/step3");
   };
 
-  const goBack = () => {
-    const res = window.confirm(
-      "При переходе на предыдущий шаг данные не будут сохранены"
-    );
-    if (res) {
-      navigate("/step1");
-    }
-  };
+  
 
+  
   const addAdvantage = () => {
     setAdvantages([...advantages, ""]);
   };
@@ -73,6 +73,24 @@ const Step2 = () => {
     advantages[index] = value;
     setAdvantages([...advantages]);
   };
+
+
+  const [radio, setRadio] = useState(globalData.radio);
+  const onRadioChange = (value) => {
+    setRadio(value)
+  }
+
+  const [checkbox, setCheckbox] = useState(globalData.checkbox || {});
+  const onCheckboxChange = (checkboxNumber) => {
+    setCheckbox({ ...checkbox, [checkboxNumber]: !checkbox[checkboxNumber]})
+  }
+
+
+  const goBack = () => {
+    setValues({ advantages, radio, checkbox });
+    navigate("/step1");
+  };
+
 
   return (
     <div className="background background-step2">
@@ -92,36 +110,51 @@ const Step2 = () => {
             register={register}
           />
         </div>
+
         <div className="step-input">
           <label>Checkbox группа</label>
           <div className="checkbox-input">
-            <input type="checkbox" value="1" {...register("checkbox1")} />
+            <input type="checkbox" value={checkboxText1} {...register("checkbox1")} checked={checkbox[checkboxText1]} onChange={() => onCheckboxChange(checkboxText1)}/>
             <label>1</label>
           </div>
           <div className="checkbox-input">
-            <input type="checkbox" value="2" {...register("checkbox2")} />
+            <input type="checkbox" value={checkboxText2} {...register("checkbox2")} checked={checkbox[checkboxText2]}  onChange={() => onCheckboxChange(checkboxText2)}/>
             <label>2</label>
           </div>
           <div className="checkbox-input">
-            <input type="checkbox" value="3" {...register("checkbox3")} />
+            <input type="checkbox" value={checkboxText3} {...register("checkbox3")} checked={checkbox[checkboxText3]}   onChange={() => onCheckboxChange(checkboxText3)}/>
             <label>3</label>
           </div>
         </div>
+
         <div className="step-input">
           <label>Radio группа</label>
           <div className="checkbox-input">
-            <input type="radio" value="1" {...register("radio")} />
-            <label>1</label>
+            <input type="radio"
+            value={radioValue1}
+            checked={radio == radioValue1}
+            {...register("radio")}
+            onChange={() => onRadioChange(radioValue1)} />
+            <label>{radioValue1}</label>
           </div>
           <div className="checkbox-input">
-            <input type="radio" value="2" {...register("radio")} />
-            <label>2</label>
+          <input type="radio"
+            value={radioValue2}
+            checked={radio == radioValue2}
+            {...register("radio")}
+            onChange={() => onRadioChange(radioValue2)} />
+            <label>{radioValue2}</label>
           </div>
           <div className="checkbox-input">
-            <input type="radio" value="3" {...register("radio")} />
-            <label>3</label>
+          <input type="radio"
+            value={radioValue3}
+            checked={radio == radioValue3}
+            {...register("radio")}
+            onChange={() => onRadioChange(radioValue3)} />
+            <label>{radioValue3}</label>
           </div>
         </div>
+
         <div className="step-buttons">
           <button onClick={goBack} type="button" className="button-back">
             Назад

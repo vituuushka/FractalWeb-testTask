@@ -32,7 +32,6 @@ const Step3 = () => {
     defaultValues: { about: globalData.about },
   });
 
-  debugger
   const [isSent, setIsSent] = useState(false);
   const [result, setResult] = useState();
   const [about, setAbout] = useState();
@@ -46,7 +45,6 @@ const Step3 = () => {
 
   const goBack = () => {
     setValues({ about })
-    debugger
     navigate("/step2");
   };
 
@@ -76,6 +74,7 @@ const Step3 = () => {
             placeholder="Placeholder"
             {...register(aboutInputName)}
             onChange={onChange}
+            value={about}
           />
           <p>{errors.about?.message}</p>
         </div>
